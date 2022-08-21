@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Downloader</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <section class="container p-4">
+        <div class="d-flex align-items-center justify-content-center content">
+            <form class="text-center">
+                <h3 class="mb-3">Youtube Video Downloader</h3>
+                <div class="mb-3 d-flex flex-column flex-md-row align-items-center">
+                    <input type="text" class="form-control mb-3 mb-md-0 me-md-3" id="url" placeholder="Input URL youtube video...">
+                    <button class="btn btn-primary btnDl" type="submit">Download</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <style>      
+        .content {
+            margin-top: 100px;
+        }
+        form {
+            width: 500px;
+        }
+    </style>
+
+    <script>
+        
+        const form = document.querySelector('form')
+        const urlInput = document.getElementById('url')
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            console.log(urlInput.value)
+        })
+        
+
+    </script>
+</body>
+</html>
