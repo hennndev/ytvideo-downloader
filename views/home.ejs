@@ -15,6 +15,10 @@
                 <div class="mb-3 d-flex flex-column flex-md-row align-items-center">
                     <input type="text" class="form-control mb-3 mb-md-0 me-md-3" id="url" placeholder="Input URL youtube video...">
                     <button class="btn btn-primary btnDl" type="submit">Download</button>
+                    <button class="btn btn-primary d-flex align-items-center d-none" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                        Loading...
+                    </button>
                 </div>
             </form>
         </div>
@@ -36,7 +40,11 @@
 
         form.addEventListener('submit', (e) => {
             e.preventDefault()
-            console.log(urlInput.value)
+            if(urlInput.value) {
+                window.location.href = `http://localhost:5000/download?URL=${urlInput.value}`
+            } else {
+                alert('Please fill URL input field!')
+            }
         })
         
 
